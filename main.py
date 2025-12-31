@@ -1,9 +1,11 @@
 # exeption class checking
 from sensor.execption import SensorExeption
 import sys
+from sensor.logger import logging
 
 if __name__ == "__main__":
     try:
-        a = 1 / 0
+        logging.info("[dividong by zero not allowed]")
+        a = 1/0
     except Exception as e:
-        print(SensorExeption(e, sys))
+        raise SensorExeption(e, sys)
